@@ -9,7 +9,7 @@
 A ready-to-use configuration for running a **solo Ironsworn: Starforged campaign with Claude** (Claude.ai *Projects* + a *skill*), with the player always keeping control:
 
 - **The player rolls every die and every oracle.** The AI identifies the move or table, checks the range and interprets. It never simulates, picks or proposes a result.
-- **The [Stargazer](#prérequis) export (JSON) is the single source of truth** for the campaign state. The AI proposes changes, the player enters them.
+- **The [Stargazer](https://nboughton.uk/apps/stargazer/#/) export (JSON) is the single source of truth** for the campaign state. The AI proposes changes, the player enters them.
 - **A pinned "SYNTHÈSE" journal entry** is rewritten at the end of each session, so every new chat starts from a compact, reliable state.
 - **A verified rules library** in Markdown: moves, oracles (ranges and order of the **2024 Reference Guide**, which reordered several tables compared to older digital datasets), core rules and assets. Built from CC BY 4.0 text.
 - **A session-closing skill** (End a Session, XP from legacy tracks, list of Stargazer edits).
@@ -88,7 +88,7 @@ docs/
 ## Prérequis
 
 - **Les livres** *Ironsworn: Starforged* (livre de règles, Reference Guide, assets) : [tomkinpress.com](https://tomkinpress.com/pages/ironsworn-starforged). Ce dépôt les complète, il ne les remplace pas.
-- **Stargazer**, application de suivi de campagne Starforged qui exporte la campagne en JSON. La méthode repose sur cet export ; un autre outil exportant un état complet peut convenir en adaptant les fichiers.
+- **[Stargazer](https://nboughton.uk/apps/stargazer/#/)**, application web de suivi de campagne Starforged qui exporte la campagne en JSON. La méthode repose sur cet export ; un autre outil exportant un état complet peut convenir en adaptant les fichiers.
 - **Un abonnement Claude payant** (Pro ou supérieur) pour les Projets et une capacité de connaissance suffisante. Les skills nécessitent, à la date de rédaction, que l'exécution de code et la création de fichiers soient activées dans les réglages.
 
 ## Mise en place
@@ -162,7 +162,7 @@ Licences de Starforged : [Tomkin Press — Licensing](https://tomkinpress.com/pa
 
 - *Ironsworn: Starforged* © Shawn Tomkin — [Tomkin Press](https://tomkinpress.com).
 - [Datasworn](https://github.com/rsek/datasworn) (rsek) pour la structure des données et les textes de base.
-- Stargazer, pour le suivi de campagne et l'export JSON.
+- [Stargazer](https://nboughton.uk/apps/stargazer/#/) (Nick Boughton), pour le suivi de campagne et l'export JSON.
 - Fichiers assemblés et vérifiés avec l'aide de Claude (Anthropic).
 
 *Dernière mise à jour : octobre 2026.*
