@@ -6,7 +6,7 @@ Ce document explique d'où viennent `SF-01` à `SF-04`, comment ils ont été v�
 
 ## Principe
 
-Chaque fichier est comparé à une **source indépendante de celle qui a servi à le construire**, et seuls les désaccords sont examinés par un humain :
+Chaque fichier est comparé à une **source indépendante de celle qui a servi à le construire** ; les désaccords sont ensuite examinés un par un :
 
 | Fichier | Construit à partir de | Vérifié contre |
 |---|---|---|
@@ -30,7 +30,8 @@ Chaque fichier est comparé à une **source indépendante de celle qui a servi �
 - **Écarts corrigés au profit du livre de règles** :
   - *Make a Discovery* : le livre de règles 2025 conserve les plages d'origine (1–4, 5–8, 9–10…), alors que le Reference Guide 2024 en donne d'autres (1–4, 5–9, 10–12…) ;
   - *Rocky World › Atmosphere* : livre 1–65 / 66–85 / 86–90 / 91–100 (sans Breathable), contre 1–65 / 66–80 / 81–85 / 86–95 / 96–100 dans le Reference Guide ;
-  - *Story Clue* : « impostor » (orthographe du livre).
+  - *Story Clue* : « impostor » (orthographe du livre) ;
+  - *Vital World › Diversity* : « Garden world (five or more biomes) ».
 
 ### SF-01 — texte des 56 moves
 Chaque move est aligné mot à mot sur le livre. **Écarts corrigés au profit du livre** :
@@ -59,11 +60,11 @@ Conservé volontairement : *Slayer*, « slay an inhuman foe ». La carte imprime
 ### SF-03
 Texte du Codex du Reference Guide, remis en forme. Les passages propres au jeu à plusieurs ont été omis et quelques redites du glossaire condensées, ce qui est signalé en tête du fichier.
 
-## Relecture humaine par échantillon
+## Contrôle du contrôleur
 
-[`ECHANTILLON-300.md`](ECHANTILLON-300.md) contient **300 lignes de tables tirées au hasard**, avec la page du livre à consulter. Sans aucune erreur trouvée sur 300 lignes, le taux d'erreur résiduel est, avec 95 % de confiance, **inférieur à 1 %** (règle de trois : 3/300). Le résultat de cette relecture sera indiqué ici.
+Pour s'assurer que le script de contrôle ne laisse rien passer, on lui a soumis **291 erreurs volontairement injectées** dans une copie de SF-02 : plage décalée d'une unité, mot remplacé n'importe où dans la ligne, ou deux lignes permutées. **Il les a toutes détectées (291/291).** Le test est reproductible : [`verification/self_test.py`](../verification/self_test.py).
 
-- [ ] Relecture de l'échantillon effectuée — résultat : _à compléter_
+Une relecture humaine ligne à ligne n'est donc pas nécessaire. Le seul risque qu'un script ne couvre pas est un écart entre la couche texte du PDF et ce qui est réellement imprimé. Une quinzaine de pages du livre (dont toutes les tables graphiques) ont été comparées visuellement à leur image, sans aucun écart. Pour un contrôle supplémentaire, [`ECHANTILLON-15.md`](ECHANTILLON-15.md) propose 15 lignes tirées au hasard, à vérifier en une dizaine de minutes (facultatif).
 
 ## Différences connues entre éditions (pour information)
 

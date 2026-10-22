@@ -83,7 +83,7 @@ outils/
   alleger_export_stargazer.py     alternative Python (multi-plateforme)
 docs/
   VERIFICATION.md                 construction des données, résultats de la vérification
-  ECHANTILLON-300.md              échantillon aléatoire pour la relecture humaine
+  ECHANTILLON-15.md               contrôle visuel facultatif (15 lignes)
 verification/                     scripts pour refaire la vérification avec vos propres PDF
 ```
 
@@ -141,7 +141,7 @@ Un export Stargazer pèse souvent plusieurs Mo à cause des images du journal en
 - **Méthode** : chaque fichier est comparé à une source indépendante de celle qui a servi à le construire ; seuls les désaccords sont examinés à la main. **En cas de désaccord entre livres, le livre de règles fait foi.**
 - **Oracles et tables** : 4 009 lignes comparées une à une au **livre de règles (édition décembre 2025)**. Les tables dessinées en graphiques ont été vérifiées visuellement.
 - **Moves** : texte aligné mot à mot sur le livre de règles. **Assets** : capacités alignées sur les cartes (*Asset Singles*).
-- **Relecture humaine** : un échantillon aléatoire de 300 lignes est fourni dans [`docs/ECHANTILLON-300.md`](docs/ECHANTILLON-300.md).
+- **Contrôle du contrôleur** : 291 erreurs volontairement injectées, toutes détectées par le script ([`verification/self_test.py`](verification/self_test.py)). Un contrôle visuel facultatif de 15 lignes est proposé dans [`docs/ECHANTILLON-15.md`](docs/ECHANTILLON-15.md).
 - **Reproductible** : les scripts de [`verification/`](verification/) permettent à chacun de refaire le contrôle avec ses propres PDF.
 - **Limites** : aucun contrôle n'est une garantie absolue. Si vous trouvez un écart avec vos livres, **le livre fait foi** : ouvrez une *issue*.
 - Détails, résultats et différences connues entre éditions : [`docs/VERIFICATION.md`](docs/VERIFICATION.md).

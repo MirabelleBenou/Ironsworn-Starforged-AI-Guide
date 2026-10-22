@@ -3832,7 +3832,7 @@ This diverse, life-bearing planet might provide some small measure of hope.
 | 1–20 | Simple (two biomes) |
 | 21–70 | Diverse (three biomes) |
 | 71–90 | Complex (four biomes) |
-| 91–100 | Garden world (five+ biomes) |
+| 91–100 | Garden world (five or more biomes) |
 
 To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
 

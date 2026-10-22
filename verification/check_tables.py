@@ -1,5 +1,6 @@
 """Étape 2 — tables (SF-01, SF-02). Licence MIT.
-Usage : python check_tables.py <rulebook_words.json> SF-01-moves.md SF-02-oracles.md
+Usage : python check_tables.py work/rulebook_words.json SF-01-moves.md SF-02-oracles.md
+(le dossier work/rulebook_pages produit par extract.py doit être à côté du fichier json)
 Contrôle ancré : pour chaque ligne de table SF, retrouve le texte sur la page du livre
 (coordonnées des mots), puis lit la plage imprimée sur la même ligne, à gauche du texte."""
 import json, re, sys, collections
@@ -36,6 +37,20 @@ def ranges_left(p, w):
         m = RANGE.match(c[0])
         res.append((int(m.group(1)), int(m.group(2) or m.group(1))) if m else None)
     return res
+
+import os
+RAW = {}
+def rawpage(p):
+    if p not in RAW:
+        f = os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), 'rulebook_pages', f'{p}.txt')
+        t = open(f, encoding='utf-8', errors='ignore').read() if os.path.exists(f) else ''
+        t = re.sub(r'(\w)-\n(\w)', r'\1\2', t)
+        RAW[p] = ' ' + ' '.join(ntok(x) for x in t.split() if ntok(x)) + ' '
+    return RAW[p]
+def fulltext_ok(p, t):
+    seq = ' '.join(ntok(x) for x in clean_sf(t).split() if ntok(x))
+    return (' ' + seq + ' ') in rawpage(p)
+
 def tables(md):
     out = []; title = []; lines = md.split('\n'); i = 0
     while i < len(lines):
@@ -85,7 +100,7 @@ for f in sys.argv[2:]:
                     found_text = True
                     rl = ranges_left(p, w)
                     seen.append(rl)
-                    if (is_matrix and col is not None and len(rl) > col and rl[col] == (a, b)) or (is_matrix and col is None and (a, b) in rl) or (not is_matrix and rl and rl[-1] == (a, b)):
+                    if ((is_matrix and col is not None and len(rl) > col and rl[col] == (a, b)) or (is_matrix and col is None and (a, b) in rl) or (not is_matrix and rl and rl[-1] == (a, b))) and fulltext_ok(p, t):
                         ok = True; break
                 if ok: break
             if ok: stats['ok'] += 1; continue
