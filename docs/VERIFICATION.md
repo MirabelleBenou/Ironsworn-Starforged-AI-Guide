@@ -2,56 +2,73 @@
 
 > Licence : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Produit non officiel, sans lien avec Tomkin Press.
 
-Ce document explique d'où viennent les fichiers `SF-01` à `SF-04` et comment ils ont été contrôlés, pour que chacun puisse juger de leur fiabilité et signaler les erreurs.
+Ce document explique d'où viennent `SF-01` à `SF-04`, comment ils ont été vérifiés, et ce qui reste à la charge d'une relecture humaine. Les scripts utilisés sont dans [`verification/`](../verification/) : toute personne possédant les livres peut refaire le contrôle.
 
-## Sources
+## Principe
 
-| Fichier | Source principale | Référence de contrôle |
+Chaque fichier est comparé à une **source indépendante de celle qui a servi à le construire**, et seuls les désaccords sont examinés par un humain :
+
+| Fichier | Construit à partir de | Vérifié contre |
 |---|---|---|
-| SF-01 Moves | [Datasworn](https://github.com/rsek/datasworn) `@datasworn/starforged` 0.0.10 (texte), tables des moves remplacées par celles du Reference Guide | Reference Guide, édition juin 2024 |
-| SF-02 Oracles | Plages, ordre et textes extraits du Reference Guide, édition juin 2024 ; structure (noms, hiérarchie) issue de Datasworn | Contrôle visuel des pages à mise en page complexe ; échantillon recoupé avec le livre de règles, édition décembre 2025 |
-| SF-03 Règles | Section « Codex » du Reference Guide (rules summary, clocks, scene challenges, glossaire), remise en forme | Reference Guide |
-| SF-04 Assets | Datasworn (texte des cartes) | Texte des Asset Sheets |
+| SF-01 Moves | Datasworn (texte), tables du Reference Guide | **Livre de règles**, édition décembre 2025 (texte des moves et tables) |
+| SF-02 Oracles | Reference Guide, juin 2024 | **Livre de règles**, édition décembre 2025, ligne par ligne |
+| SF-03 Règles | Codex du Reference Guide | Reference Guide (résumé propre à ce livre) |
+| SF-04 Assets | Datasworn | **Cartes d'assets** (*Asset Singles*, janvier 2023), capacité par capacité |
 
-## Pourquoi ne pas se contenter d'un jeu de données existant
+**En cas de désaccord entre deux livres, c'est le livre de règles qui est suivi.**
 
-Les jeux de données numériques de Starforged les plus répandus suivent le texte du livre de **2022**. Le **Reference Guide de 2024** (et le livre de règles réédité depuis) a modifié plusieurs tables : plages différentes, entrées réordonnées (souvent par ordre alphabétique), ou formulations corrigées. Un même jet de d100 peut donc donner un résultat différent selon la source. La bibliothèque suit l'édition 2024.
+## Résultats (22 octobre 2026)
 
-## Différences constatées entre Datasworn 0.0.10 et le Reference Guide 2024
+### SF-02 et tables de SF-01 — 4 009 lignes
+- **3 868 lignes** retrouvées automatiquement sur la page du livre, avec la même plage sur la même ligne imprimée. Pour les matrices (Terminus/Outlands/Expanse, environnements, lifebearing/lifeless), la colonne est aussi contrôlée.
+- **Les lignes restantes** appartiennent aux 13 tables dessinées en graphiques, illisibles automatiquement et **vérifiées visuellement page par page** :
+  - Environment, et Creature Basic Form (5 colonnes) ;
+  - Location des colonies, des épaves et des vaults ;
+  - Derelict Zones (Starship et Settlement) ;
+  - Planetary Class ;
+  - Stellar Object.
+- **Écarts corrigés au profit du livre de règles** :
+  - *Make a Discovery* : le livre de règles 2025 conserve les plages d'origine (1–4, 5–8, 9–10…), alors que le Reference Guide 2024 en donne d'autres (1–4, 5–9, 10–12…) ;
+  - *Rocky World › Atmosphere* : livre 1–65 / 66–85 / 86–90 / 91–100 (sans Breathable), contre 1–65 / 66–80 / 81–85 / 86–95 / 96–100 dans le Reference Guide ;
+  - *Story Clue* : « impostor » (orthographe du livre).
 
-### Plages modifiées
-- Make a Discovery (table du move)
-- Settlement › First Look (une entrée ajoutée, « Prominent emblems or signage », plages revues)
-- Jovian World › Life
-- Rocky World › Atmosphere
-- Derelict Zones › Settlement (Living 31–55, Medical 56–65, Operations 66–75, Production 76–90)
+### SF-01 — texte des 56 moves
+Chaque move est aligné mot à mot sur le livre. **Écarts corrigés au profit du livre** :
+- *Gather Information* (miss) : « you unearth a dire threat or reveal an unwelcome truth » ;
+- *Ask the Oracle* : « resolve questions, discover details, reveal locations » ;
+- *Secure an Advantage* (et sa version Scene Challenge) : « With strength, endurance, or aggression » ;
+- *Sojourn* : « choose two recover moves » (le jeu de données portait « contents ») ;
+- *Face Death* et *Face Desolation* : « death-bound », « soul-bound » ;
+- *Finish the Scene* (miss) : « a dire turn of events » ;
+- *Fulfill Your Vow*, *Finish an Expedition* : « (none for a troublesome quest / expedition) » ;
+- *Test Your Relationship* : « If you refuse or fail, the connection is permanently undone ».
 
-### Ordre ou texte des entrées modifié (plages identiques)
-- Observed From Space : Grave, Ice, Jungle, Shattered, Tainted et Vital World (entrées réordonnées)
-- Derelict › Community › Area et Derelict › Living › Area (entrées réordonnées)
-- Character Name › Given Name (entrée 99)
-- Endure Harm, ligne 36–50 (formulation)
-- Vital World › Diversity (formulation)
+Résidus connus, propres à la mise en page : les tables de *Repair*, *Take Decisive Action* et *Ask the Oracle* sont contrôlées avec les tables. Un mot déplacé dans *Face Danger* est un artefact d'extraction.
 
-### Texte des moves corrigé
-- Fulfill Your Vow : « make the legacy reward one rank lower (none for a troublesome quest) »
-- Finish an Expedition : « (none for a troublesome expedition) »
-- Test Your Relationship : « If you refuse or fail, the connection is permanently undone. »
+### SF-04 — texte des 87 cartes
+Chaque capacité est alignée sur la carte. **Écarts corrigés au profit des cartes** :
+- *Heavy Cannons* : « Strafe » ;
+- *Internal Refit* : « vehicle » (au lieu de « ship » / « vessel ») ;
+- *Archer* : « On a miss, take +1 ammo and Sacrifice Resources (-1) » ;
+- *Blademaster* : « When you Gain Ground… against a foe, choose one », « this blade », « your oathbound blade » ;
+- *Devotant* : « Name it and choose » ;
+- *Slayer* : « face your quarry on its own terms ».
 
-### Coquilles du jeu de données corrigées
-- Callsign 48 : « Ironclad »
-- « impassable »
+Conservé volontairement : *Slayer*, « slay an inhuman foe ». La carte imprime « a inhuman », une coquille évidente.
 
-## Méthode d'extraction et de contrôle
+### SF-03
+Texte du Codex du Reference Guide, remis en forme. Les passages propres au jeu à plusieurs ont été omis et quelques redites du glossaire condensées, ce qui est signalé en tête du fichier.
 
-1. Extraction des lignes « plage + texte » du PDF du Reference Guide avec leurs coordonnées, reconstitution des colonnes et des tables multi-colonnes (Terminus / Outlands / Expanse, environnements des créatures, lifebearing / lifeless).
-2. Association de chaque table extraite à la table Datasworn correspondante (similarité des textes, page attendue).
-3. Contrôles automatiques : plages continues de 1 à 100 sans trou ni chevauchement, cohérence des textes avec la table de référence.
-4. Contrôle visuel, page par page, des tables à mise en page particulière (cartes de zones, matrices, listes de noms) et des tables que l'extraction ne lisait pas correctement.
-5. Recoupement d'un échantillon de points avec le livre de règles (édition décembre 2025) : concordant.
+## Relecture humaine par échantillon
 
-Les lignes « -- » du Reference Guide (résultat impossible pour ce type de planète ou de région) sont omises des tables. Les « Sample Names » des planètes et les « name tags » des colonies sont des listes dans le Reference Guide : ils sont présentés comme des listes, sans jet.
+[`ECHANTILLON-300.md`](ECHANTILLON-300.md) contient **300 lignes de tables tirées au hasard**, avec la page du livre à consulter. Sans aucune erreur trouvée sur 300 lignes, le taux d'erreur résiduel est, avec 95 % de confiance, **inférieur à 1 %** (règle de trois : 3/300). Le résultat de cette relecture sera indiqué ici.
+
+- [ ] Relecture de l'échantillon effectuée — résultat : _à compléter_
+
+## Différences connues entre éditions (pour information)
+
+Les jeux de données numériques les plus répandus (dont Datasworn 0.0.10) suivent le livre de 2022. Depuis, plusieurs tables ont été réordonnées ou modifiées : Settlement › First Look, Jovian World › Life, Derelict Zones › Settlement, Observed From Space de plusieurs planètes, Derelict › Community/Living › Area, Character Name › Given Name (entrée 99), Endure Harm (ligne 36–50). La bibliothèque suit les livres actuels.
 
 ## Limites
 
-Ce contrôle n'est pas une relecture humaine ligne à ligne des quelque 240 tables. **En cas d'écart avec vos livres, le livre fait foi.** Merci de signaler toute erreur dans une *issue* en indiquant la table, la ligne et la page du livre.
+Un contrôle, même outillé, n'est pas une garantie absolue. **En cas d'écart avec vos livres, le livre fait foi** : merci de le signaler dans une *issue* (table, ligne, page).

@@ -2,7 +2,7 @@
 
 > Licence : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This work is based on Ironsworn: Starforged, created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution 4.0 International License. Produit non officiel, sans lien avec Tomkin Press.
 
-> Source : Datasworn (© Shawn Tomkin, CC BY 4.0), texte contrôlé contre Ironsworn-Starforged-Assets-Sheets.pdf. Achat : 3 XP (1re capacité active). Amélioration : 2 XP (2e ou 3e, ordre libre). ● = capacité active à l'achat.
+> Source : Datasworn (© Shawn Tomkin, CC BY 4.0), texte contrôlé capacité par capacité contre les cartes d'assets (Asset Singles, janvier 2023) et aligné sur elles. Achat : 3 XP (1re capacité active). Amélioration : 2 XP (2e ou 3e, ordre libre). ● = capacité active à l'achat.
 
 
 ## Command Vehicle Assets
@@ -158,15 +158,15 @@ _jauge : cargo 3_
 ### HEAVY CANNONS  _(Module)_
 1. ● When you aim your cannons and use them to *Strike*, choose one.
 
-  * Strafing run: Add +1 and take +1 momentum on a hit.
+  * Strafe: Add +1 and take +1 momentum on a hit.
   * Focus fire: Mark progress on a hit, but *Lose Momentum* (-1).
 2. ○ Once per fight, when you *Clash* by committing to an all-or-nothing exchange of fire, add +1, count a weak hit as a strong hit, and mark progress on a hit. On a miss, you must suffer a dire outcome.
 3. ○ When you *Compel*, *Enter the Fray*, or *Gain Ground* by bringing your cannons to bear and sending a promise of violence to your foe over communication channels, add +1 and take +1 momentum on a hit. On a strong hit with a match, take another +1 momentum.
 
 ### INTERNAL REFIT  _(Module)_
-1. ● You have customized the cabins, common spaces, and environment of the ship to your needs. When you *Undertake an Expedition* (dangerous or greater), reroll any dice for the first leg of your journey. On a hit, you and your allies may envision how you make yourself at home; if you do, take +2 momentum or +1 spirit.
-2. ○ Your vessel is stocked with reserves. When you *Sacrifice Resources* and your supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. Otherwise, mark unprepared.
-3. ○ When you *Enter the Fray* to oppose an invader within your vessel, reroll any dice. On a strong hit, take +momentum equal to integrity. On a strong hit with a match, also mark progress.
+1. ● You have customized the cabins, common spaces, and environment of the vehicle to your needs. When you *Undertake an Expedition* (dangerous or greater), reroll any dice for the first leg of your journey. On a hit, you and your allies may envision how you make yourself at home; if you do, take +2 momentum or +1 spirit.
+2. ○ Your vehicle is stocked with reserves. When you *Sacrifice Resources* and your supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. Otherwise, mark unprepared.
+3. ○ When you *Enter the Fray* to oppose an invader within your vehicle, reroll any dice. On a strong hit, take +momentum equal to integrity. On a strong hit with a match, also mark progress.
 
 ### MEDBAY  _(Module)_
 1. ● When you use your medbay to *Heal* yourself or another patient, you may reroll your action die if its value is less than your vehicle's integrity.
@@ -240,7 +240,7 @@ On a strong hit with a match, you also remain totally undetected; take +2 moment
 ### ARCHER  _(Path)_
 _Requirement : If you wield a power bow..._
 _jauge : ammo 6_
-1. ● You carry 6 ammo. When you *Strike* or *Clash*, you may add +1 or +2 and suffer that amount as -ammo. To replenish your ammo by crafting projectiles, roll +wits. On a strong hit, take up to +6 ammo. On a weak hit, take up to +4 ammo and *Sacrifice Resources* (-1). On a miss, *Sacrifice Resources* (-1).
+1. ● You carry 6 ammo. When you *Strike* or *Clash*, you may add +1 or +2 and suffer that amount as -ammo. To replenish your ammo by crafting projectiles, roll +wits. On a strong hit, take up to +6 ammo. On a weak hit, take up to +4 ammo and *Sacrifice Resources* (-1). On a miss, take +1 ammo and *Sacrifice Resources* (-1).
 2. ○ You may *Enter the Fray* by unleashing a volley of bow shots. If you do, roll +ammo and suffer -1 ammo. On a hit, mark progress.
 3. ○ When you load a specialized projectile such as a zip line, explosive, or electromagnetic disrupter, suffer -1 ammo. If you then take your shot by making a move, you may preset your action die to 5. On a hit, envision the effects and take +1 momentum.
 
@@ -270,11 +270,11 @@ _champs : ideology_
 ### BLADEMASTER  _(Path)_
 _Requirement : If you wield a bladed weapon..._
 1. ● When you *Clash* or *Strike* in close quarters, add +1. On a strong hit with a match, you are unstoppable; mark progress.
-2. ○ If you *Gain Ground* by moving into close quarters against your foe, choose your approach.
+2. ○ When you *Gain Ground* by moving into close quarters against a foe, choose one.
 
   * Charge: Roll +heart, and mark progress on a hit.
   * Evade: Roll +edge, and take +1 momentum on a hit.
-3. ○ You wield an iconic blade. Give it a name. When you *Swear an Iron Vow* by binding your promise to the blade, add +1. On a hit, fill the box below. If you make a move (including a progress move) using this oathbound blade and score a miss, you may clear the box to reroll any dice.
+3. ○ You wield an iconic blade. Give it a name. When you *Swear an Iron Vow* by binding your promise to this blade, add +1. On a hit, fill the box below. If you make a move (including a progress move) using your oathbound blade and score a miss, you may clear the box to reroll any dice.
 
 ### BOUNTY HUNTER  _(Path)_
 1. ● When you take a bounty contract and *Swear an Iron Vow* to see it done, add +1. On a strong hit, you’ve got a solid lead and may mark progress on the quest. When you *Fulfill Your Vow* on a hunt, make the legacy reward one rank higher (1 extra box if already epic).
@@ -306,7 +306,7 @@ _jauge : safety 5_
 
 ### DEVOTANT  _(Path)_
 _champs : name, linked stat_
-1. ● You worship a god, power, or entity. Give it a name and choose one of your stats to represent its nature. When you *Secure an Advantage* or *Gain Ground* by calling on it for guidance or aid, roll +linked stat. On a hit, take +1 momentum or +1 spirit. On a strong hit with a match, a miracle or sign manifests; take another +1 momentum or +1 spirit.
+1. ● You worship a god, power, or entity. Name it and choose one of your stats to represent its nature. When you *Secure an Advantage* or *Gain Ground* by calling on it for guidance or aid, roll +linked stat. On a hit, take +1 momentum or +1 spirit. On a strong hit with a match, a miracle or sign manifests; take another +1 momentum or +1 spirit.
 2. ○ When you *Swear an Iron Vow* in service to your faith, roll +linked stat and take +2 momentum or +2 spirit on a hit. When you *Fulfill Your Vow* on a divine quest (formidable or greater) and score a hit, also mark 2 ticks on your bonds legacy track.
 3. ○ When you *Hearten* through contemplation or sharing of your faith, you may roll +linked stat. If you do, take +1 spirit or +1 momentum on a strong hit.
 
@@ -455,7 +455,7 @@ On a strong hit with a match, you charted a new path during the journey; mark 1 
 ### SLAYER  _(Path)_
 1. ● When you make a move to investigate, track, or stalk an inhuman foe, add +1 and take +1 momentum on a hit.
 2. ○ When you *Swear an Iron Vow* (formidable or greater) to slay an inhuman foe in service to a community, reroll any dice. When you *Fulfill Your Vow* and score a hit, also mark 2 ticks on your bonds legacy track.
-3. ○ When you *Enter the Fray* with an objective to slay an inhuman foe, take +2 momentum. If you choose to face the creature on its own terms as you begin the fight, envision the crucial weapon, protection, or aid you set aside, and set the objective one rank higher. If you *Take Decisive Action* after making this sacrifice and score a strong hit, take a trophy of your victory and mark 2 ticks on your quests legacy track.
+3. ○ When you *Enter the Fray* with an objective to slay an inhuman foe, take +2 momentum. If you choose to face your quarry on its own terms as you begin the fight, envision the crucial weapon, protection, or aid you set aside, and set the objective one rank higher. If you *Take Decisive Action* after making this sacrifice and score a strong hit, take a trophy of your victory and mark 2 ticks on your quests legacy track.
 
 ### SLEUTH  _(Path)_
 1. ● When you *Swear an Iron Vow* to solve a murder, disappearance, theft, or other mystery, make the rank of the quest no greater than formidable. Then, when you *Gather Information* in the course of the investigation, roll three challenge dice and choose two. If any challenge dice match, you must use those values. On a miss with a match, envision what you learn of a deepening conspiracy or betrayal, make the rank of your quest one higher (no greater than epic), and use the new rank when marking future progress.

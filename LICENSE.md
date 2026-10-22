@@ -32,4 +32,4 @@ Ce dépôt n'est ni un produit officiel Ironsworn, ni un produit de Tomkin Press
 
 ## Outils — MIT
 
-`outils/` : voir [`outils/LICENSE`](outils/LICENSE).
+`outils/` et `verification/` : voir [`outils/LICENSE`](outils/LICENSE).

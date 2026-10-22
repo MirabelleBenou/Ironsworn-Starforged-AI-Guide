@@ -2,7 +2,7 @@
 
 > Licence : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This work is based on Ironsworn: Starforged, created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution 4.0 International License. Produit non officiel, sans lien avec Tomkin Press.
 
-> Sources : textes des moves et assets = Datasworn (données officielles, © Shawn Tomkin, CC BY 4.0), corrigés sur le **Reference Guide (édition juin 2024)** là où celui-ci diffère. Toutes les tables d'oracles avec plages = **plages et ordre du Reference Guide 2024** (l'édition 2024 a réordonné plusieurs tables : ne pas se fier à une table d'une autre source). Contrôle croisé avec le **livre de règles (édition décembre 2025)** : concordant sur les points vérifiés. « RG p. X » = page du Reference Guide ; « Rulebook p. X » = page du livre de règles.
+> Sources : textes des moves = Datasworn (données officielles, © Shawn Tomkin, CC BY 4.0), **contrôlés phrase par phrase contre le livre de règles (édition décembre 2025)** et alignés sur lui. Tables d'oracles : plages et ordre du **Reference Guide (juin 2024)**, **contrôlés ligne par ligne contre le livre de règles (décembre 2025)** ; là où les deux livres diffèrent (Make a Discovery, Rocky World › Atmosphere), c'est le livre de règles qui est suivi. Ne pas se fier à une table d'une autre source (plusieurs tables ont été réordonnées depuis 2022). « RG p. X » = page du Reference Guide ; « Rulebook p. X » = page du livre de règles.
 
 
 ## Session Moves
@@ -81,7 +81,7 @@ On a **miss**, you fail, or a momentary success is undermined by a dire turn of 
 
   * With speed, mobility, or agility: Roll +edge
   * With resolve, command, or sociability: Roll +heart
-  * With strength, endurance, aggression: Roll +iron
+  * With strength, endurance, or aggression: Roll +iron
   * With deception, stealth, or trickery: Roll +shadow
   * With expertise, focus, or observation: Roll +wits
 
@@ -99,7 +99,7 @@ On a **strong hit**, you discover something helpful and specific. The path you m
 
 On a **weak hit**, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.
 
-On a **miss**, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. *Pay the Price*.
+On a **miss**, you unearth a dire threat or reveal an unwelcome truth that undermines your quest. *Pay the Price*.
 
 ### Compel — Rulebook p. 150
 **When you try to persuade someone or make them an offer**, envision your approach. If you...
@@ -268,28 +268,28 @@ On a **miss**, you encounter an immediate hardship or threat, and must *Pay the 
 | Roll | Result |
 |---|---|
 | 1–4 | Advanced technology waiting to be harnessed or salvaged |
-| 5–9 | Ancient archive or message |
-| 10–12 | Artificial consciousness evolved to a higher state |
-| 13–17 | Clues to a crucial resource or uncharted domain |
-| 18–20 | Envoy from another time or reality |
-| 21–24 | Extraordinary natural phenomenon |
-| 25–27 | First contact with intelligent life |
-| 28–32 | Gateway to another time or alternate reality |
-| 33–36 | Key to unlocking a language or method of communication |
-| 37–41 | Lost or hidden people |
-| 42–45 | Majestic or unusual lifeforms |
-| 46–50 | Marvel of ancient engineering |
-| 51–53 | Miraculously preserved artifact or specimen |
-| 54–58 | Monumental architecture or artistry of an ancient civilization |
-| 59–63 | Mysterious device or artifact of potential value |
-| 64–68 | New understanding of an enduring mystery |
-| 69–72 | Pathway or means of travel to a distant location |
-| 73–77 | Person or lifeform with phenomenal abilities |
-| 78–82 | Place of awe-inspiring beauty |
-| 83–87 | Rare and valuable resource |
-| 88–92 | Safeguarded or idyllic location |
-| 93–96 | Visions or prophesies of the future |
-| 97–100 | Roll twice |
+| 5–8 | Ancient archive or message |
+| 9–10 | Artificial consciousness evolved to a higher state |
+| 11–12 | Clues to a crucial resource or uncharted domain |
+| 13–14 | Envoy from another time or reality |
+| 15–22 | Extraordinary natural phenomenon |
+| 23–24 | First contact with intelligent life |
+| 25–26 | Gateway to another time or alternate reality |
+| 27–28 | Key to unlocking a language or method of communication |
+| 29–34 | Lost or hidden people |
+| 35–42 | Majestic or unusual lifeforms |
+| 43–46 | Marvel of ancient engineering |
+| 47–50 | Miraculously preserved artifact or specimen |
+| 51–56 | Monumental architecture or artistry of an ancient civilization |
+| 57–62 | Mysterious device or artifact of potential value |
+| 63–66 | New understanding of an enduring mystery |
+| 67–68 | Pathway or means of travel to a distant location |
+| 69–70 | Person or lifeform with phenomenal abilities |
+| 71–78 | Place of awe-inspiring beauty |
+| 79–86 | Rare and valuable resource |
+| 87–88 | Safeguarded or idyllic location |
+| 89–90 | Visions or prophesies of the future |
+| 91–100 | Roll Twice |
 
 ### Confront Chaos — Rulebook p. 177
 **When your exploration of a waypoint uncovers something dreadful**, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.
@@ -568,7 +568,7 @@ On a **miss**, it’s worse than you thought. Suffer an additional -1 integrity 
 ### Sojourn — Rulebook p. 209
 **When you spend time recovering within a community**, roll +heart.
 
-On a **strong hit**, this is a safe refuge. You and your allies may each choose two recover contents: *Heal*, *Hearten*, *Repair*, or *Resupply*. Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
+On a **strong hit**, this is a safe refuge. You and your allies may each choose two recover moves: *Heal*, *Hearten*, *Repair*, or *Resupply*. Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
 
 On a **weak hit**, as above, but time is short or resources are strained. You and your allies each make one recover move instead of two, with no more than three moves total among the group.
 
@@ -653,7 +653,7 @@ On a **strong hit**, you are cast back into the mortal world.
 On a **weak hit**, choose one.
 
   * You die, but not before making a noble sacrifice. Envision your final moments.
-  * There is more to be done. Envision what is revealed or asked of you at death's door, and *Swear an Iron Vow* to complete an extreme quest. You return to the mortal world and must mark **doomed**. When you complete the deathbound quest, clear the impact.
+  * There is more to be done. Envision what is revealed or asked of you at death's door, and *Swear an Iron Vow* to complete an extreme quest. You return to the mortal world and must mark **doomed**. When you complete the death-bound quest, clear the impact.
 
 On a **miss**, you are dead.
 
@@ -665,7 +665,7 @@ On a **strong hit**, you resist and press on.
 On a **weak hit**, choose one.
 
   * Your spirit breaks, but not before you make a noble sacrifice. Envision your final moments.
-  * You see a vision of a dreaded event coming to pass. Envision that dark future, and *Swear an Iron Vow* to prevent it through an extreme quest. You return to your senses and must mark **tormented**. When you complete the soulbound quest, clear the impact.
+  * You see a vision of a dreaded event coming to pass. Envision that dark future, and *Swear an Iron Vow* to prevent it through an extreme quest. You return to your senses and must mark **tormented**. When you complete the soul-bound quest, clear the impact.
 
 On a **miss**, you succumb to despair or horror and are lost.
 
@@ -724,7 +724,7 @@ For each **miss**, choose one.
 ## Fate Moves
 
 ### Ask the Oracle — Rulebook p. 229
-**When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events**, you may...
+**When you seek to resolve questions, discover details, reveal locations, determine how other characters respond, or trigger encounters or events**, you may...
 
   * Draw a conclusion: Decide the answer based on the most interesting and obvious result.
   * Spark an idea: Use an oracle table or other random prompt.
@@ -804,7 +804,7 @@ On a **miss**, you fail, or a momentary success is undermined by a dramatic turn
 
   * With speed, mobility, or agility: Roll +edge
   * With resolve, command, or sociability: Roll +heart
-  * With strength, endurance, aggression: Roll +iron
+  * With strength, endurance, or aggression: Roll +iron
   * With deception, stealth, or trickery: Roll +shadow
   * With expertise, focus, or observation: Roll +wits
 
@@ -822,4 +822,4 @@ On a **strong hit**, you achieve your objective unconditionally.
 
 On a **weak hit**, you succeed, but not without cost. You must *Pay the Price*. Make this a minor cost relative to the scope of the scene.
 
-On a **miss**, you fail or are undermined by a dire and costly turn of events. *Pay the Price*.
+On a **miss**, you fail or are undermined by a dire turn of events. *Pay the Price*.

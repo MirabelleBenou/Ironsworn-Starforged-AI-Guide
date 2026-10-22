@@ -11,7 +11,7 @@ A ready-to-use configuration for running a **solo Ironsworn: Starforged campaign
 - **The player rolls every die and every oracle.** The AI identifies the move or table, checks the range and interprets. It never simulates, picks or proposes a result.
 - **The [Stargazer](https://nboughton.uk/apps/stargazer/#/) export (JSON) is the single source of truth** for the campaign state. The AI proposes changes, the player enters them.
 - **A pinned "SYNTHÈSE" journal entry** is rewritten at the end of each session, so every new chat starts from a compact, reliable state.
-- **A verified rules library** in Markdown: moves, oracles (ranges and order of the **2024 Reference Guide**, which reordered several tables compared to older digital datasets), core rules and assets. Built from CC BY 4.0 text.
+- **A verified rules library** in Markdown: moves, oracles, core rules and assets, built from CC BY 4.0 text and **checked line by line against the current rulebook (December 2025 edition)** and asset cards; several tables were reordered compared to older digital datasets. Verification scripts are included so anyone owning the books can re-run the check.
 - **A session-closing skill** (End a Session, XP from legacy tracks, list of Stargazer edits).
 - **A preparation kit** for creating a new campaign (chapter 2 of the rulebook, CC BY-NC-SA 4.0).
 - **Small tools** to strip embedded images from Stargazer exports (≈2.4 MB → ≈30 KB), including a browser page that works on Android.
@@ -82,7 +82,9 @@ outils/
   alleger_export_stargazer.ps1    script PowerShell appelé par le .bat
   alleger_export_stargazer.py     alternative Python (multi-plateforme)
 docs/
-  VERIFICATION.md                 comment les données ont été construites et vérifiées
+  VERIFICATION.md                 construction des données, résultats de la vérification
+  ECHANTILLON-300.md              échantillon aléatoire pour la relecture humaine
+verification/                     scripts pour refaire la vérification avec vos propres PDF
 ```
 
 ## Prérequis
@@ -136,10 +138,13 @@ Un export Stargazer pèse souvent plusieurs Mo à cause des images du journal en
 
 ## Vérification des données et limites
 
-- **Moves et assets** : textes issus de [Datasworn](https://github.com/rsek/datasworn) (données officielles sous CC BY 4.0), corrigés là où le Reference Guide 2024 diffère.
-- **Oracles** : plages et ordre extraits du **Reference Guide (édition juin 2024)**, qui a réordonné plusieurs tables par rapport aux données de 2022 encore utilisées par certains outils. Les tables à mise en page complexe ont été contrôlées visuellement page par page, et un échantillon a été recoupé avec le livre de règles (édition décembre 2025).
-- **Limites** : la vérification n'est pas une relecture humaine ligne à ligne de chaque table. Si vous trouvez un écart avec vos livres, **le livre fait foi** : ouvrez une *issue*.
-- Détails et liste des différences connues : [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
+- **Méthode** : chaque fichier est comparé à une source indépendante de celle qui a servi à le construire ; seuls les désaccords sont examinés à la main. **En cas de désaccord entre livres, le livre de règles fait foi.**
+- **Oracles et tables** : 4 009 lignes comparées une à une au **livre de règles (édition décembre 2025)**. Les tables dessinées en graphiques ont été vérifiées visuellement.
+- **Moves** : texte aligné mot à mot sur le livre de règles. **Assets** : capacités alignées sur les cartes (*Asset Singles*).
+- **Relecture humaine** : un échantillon aléatoire de 300 lignes est fourni dans [`docs/ECHANTILLON-300.md`](docs/ECHANTILLON-300.md).
+- **Reproductible** : les scripts de [`verification/`](verification/) permettent à chacun de refaire le contrôle avec ses propres PDF.
+- **Limites** : aucun contrôle n'est une garantie absolue. Si vous trouvez un écart avec vos livres, **le livre fait foi** : ouvrez une *issue*.
+- Détails, résultats et différences connues entre éditions : [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
 
 ## Adapter à votre campagne
 
@@ -153,8 +158,8 @@ Un export Stargazer pèse souvent plusieurs Mo à cause des images du journal en
 |---|---|---|
 | `projet-claude/connaissance/SF-01` à `SF-04` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Texte du Reference Guide et des cartes d'assets, sous CC BY 4.0 |
 | `projet-claude/connaissance/SF-05-lore.md`, `kit-preparation/` | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | Dérivés du texte du livre de règles, sous CC BY-NC-SA 4.0 (usage non commercial, partage à l'identique) |
-| `SF-00`, `instructions-projet.md`, `skill/`, `README.md`, `docs/` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Méthode originale de ce dépôt |
-| `outils/` | [MIT](outils/LICENSE) | Code |
+| `SF-00`, `instructions-projet.md`, `skill/`, `README.md`, `docs/` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Méthode originale de ce dépôt (l'échantillon reprend des lignes de tables sous CC BY 4.0) |
+| `outils/`, `verification/` | [MIT](outils/LICENSE) | Code |
 
 Licences de Starforged : [Tomkin Press — Licensing](https://tomkinpress.com/pages/licensing). Ces licences ne couvrent que le texte : **aucune illustration, aucun logo ni élément graphique** des livres n'est inclus dans ce dépôt. Voir aussi [`LICENSE.md`](LICENSE.md).
 

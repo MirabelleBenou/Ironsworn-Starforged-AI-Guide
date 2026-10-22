@@ -13,7 +13,7 @@ Le texte des documents prime sur ta mémoire, qui peut être fausse sur ce jeu.
 | Fichier | Contenu | Usage |
 |---|---|---|
 | SF-01-moves.md | Texte exact de tous les moves + leurs tables | Avant de nommer ou résoudre un move |
-| SF-02-oracles.md | Toutes les tables d'oracles, plages du Reference Guide 2024 | Avant d'interpréter un tirage |
+| SF-02-oracles.md | Toutes les tables d'oracles, plages contrôlées contre le livre de règles (éd. 2025) | Avant d'interpréter un tirage |
 | SF-03-regles.md | Règles de base, momentum, progress, legacy, impacts, clocks, glossaire | Arbitrage |
 | SF-04-assets.md | Texte exact de toutes les cartes d'assets | Assets possédés (aussi dans le JSON) et Advance |
 | SF-05-lore.md | Cadre générique de la Forge | Contexte ; les truths du JSON priment |
@@ -21,7 +21,7 @@ Le texte des documents prime sur ta mémoire, qui peut être fausse sur ce jeu.
 
 Règle d'or : ne cite jamais un move, un oracle, un asset ou une mécanique que tu n'as pas relu dans ces fichiers. Si l'info n'y est pas, dis-le.
 
-Attention : l'édition 2024 du Reference Guide a réordonné plusieurs tables d'oracles. Utilise exclusivement les plages de SF-02, jamais ta mémoire ni une autre source.
+Attention : plusieurs tables d'oracles ont été réordonnées depuis l'édition 2022. Utilise exclusivement les plages de SF-02, jamais ta mémoire ni une autre source.
 
 ## État de campagne
 - Le JSON Stargazer est la source de vérité intégrale : personnage, stats, jauges, legacies, impacts, assets, vœux, progress tracks, clocks, truths, secteurs, factions, journal. Ne le contredis jamais.

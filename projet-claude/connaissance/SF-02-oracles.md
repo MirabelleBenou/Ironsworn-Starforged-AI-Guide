@@ -1,8 +1,8 @@
-# Starforged — Oracles (tables exactes, Reference Guide 2024)
+# Starforged — Oracles (tables exactes, contrôlées contre le livre de règles 2025)
 
 > Licence : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This work is based on Ironsworn: Starforged, created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution 4.0 International License. Produit non officiel, sans lien avec Tomkin Press.
 
-> Sources : textes des moves et assets = Datasworn (données officielles, © Shawn Tomkin, CC BY 4.0), corrigés sur le **Reference Guide (édition juin 2024)** là où celui-ci diffère. Toutes les tables d'oracles avec plages = **plages et ordre du Reference Guide 2024** (l'édition 2024 a réordonné plusieurs tables : ne pas se fier à une table d'une autre source). Contrôle croisé avec le **livre de règles (édition décembre 2025)** : concordant sur les points vérifiés. « RG p. X » = page du Reference Guide ; « Rulebook p. X » = page du livre de règles.
+> Sources : textes des moves = Datasworn (données officielles, © Shawn Tomkin, CC BY 4.0), **contrôlés phrase par phrase contre le livre de règles (édition décembre 2025)** et alignés sur lui. Tables d'oracles : plages et ordre du **Reference Guide (juin 2024)**, **contrôlés ligne par ligne contre le livre de règles (décembre 2025)** ; là où les deux livres diffèrent (Make a Discovery, Rocky World › Atmosphere), c'est le livre de règles qui est suivi. Ne pas se fier à une table d'une autre source (plusieurs tables ont été réordonnées depuis 2022). « RG p. X » = page du Reference Guide ; « Rulebook p. X » = page du livre de règles.
 
 > Les tables appelées par les moves (Pay the Price, Ask the Oracle, Begin a Session, Make a Discovery, Confront Chaos, etc.) sont dans SF-01-moves.
 
@@ -2840,7 +2840,7 @@ This oracle will introduce narrative turns, troubles, and revelations. It can be
 | 79–81 | Leads to a notable or central place |
 | 82–84 | Suggests a history of similar incidents |
 | 85–87 | Suggests a looming event or deadline |
-| 88–90 | Suggests an imposter or forgery |
+| 88–90 | Suggests an impostor or forgery |
 | 91–100 | → *Descriptor + Focus* (RG p. 30–31) |
 
 When you *Gather Information* to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the *Gather Information* roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
@@ -3539,10 +3539,9 @@ A rugged planet scarred by eons of destructive asteroid impacts.
 | Roll | Result |
 |---|---|
 | 1–65 | None / thin |
-| 66–80 | Toxic |
-| 81–85 | Corrosive |
-| 86–95 | Marginal |
-| 96–100 | Breathable |
+| 66–85 | Toxic |
+| 86–90 | Corrosive |
+| 91–100 | Marginal |
 
 #### Observed From Space  `1d100`
 | Roll | Result |
