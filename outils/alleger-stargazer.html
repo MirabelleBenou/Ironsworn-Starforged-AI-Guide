@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alléger export Stargazer</title>
+<style>
+  :root { --bg:#f6f5f2; --fg:#1d1d1f; --muted:#6b6b70; --card:#ffffff; --line:#d9d7d2; --accent:#7a4fd6; --ok:#2e7d4f; --warn:#b35c00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141417; --fg:#ececf0; --muted:#9a9aa3; --card:#1e1e23; --line:#33333b; --accent:#a98bff; --ok:#6fcf97; --warn:#ffb15c; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.35rem; margin:0 0 4px; }
+  p.sub { margin:0 0 20px; color:var(--muted); font-size:.95rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; }
+  label.pick { display:block; text-align:center; padding:18px; border:2px dashed var(--line); border-radius:10px; cursor:pointer; font-weight:600; }
+  input[type=file] { display:none; }
+  select { width:100%; padding:10px; font-size:1rem; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg); }
+  button { width:100%; padding:14px; font-size:1rem; font-weight:600; border:0; border-radius:10px; background:var(--accent); color:#fff; margin-top:10px; cursor:pointer; }
+  button.secondary { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+  button:disabled { opacity:.4; cursor:default; }
+  .stat { font-variant-numeric: tabular-nums; }
+  .ok { color:var(--ok); } .warn { color:var(--warn); }
+  .hidden { display:none; }
+  small { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Alléger un export Stargazer</h1>
+  <p class="sub">Retire les images du journal et ne garde que la campagne choisie. Tout se passe dans le navigateur : rien n'est envoyé nulle part, et le fichier d'origine n'est pas modifié.</p>
+
+  <div class="card">
+    <label class="pick" for="file">Choisir l'export .json</label>
+    <input id="file" type="file" accept=".json,application/json">
+    <p id="fileinfo" class="stat" style="margin:12px 0 0"></p>
+  </div>
+
+  <div id="step2" class="card hidden">
+    <label for="camp"><strong>Campagne à garder</strong></label>
+    <select id="camp" style="margin-top:8px"></select>
+    <p id="campwarn" class="warn hidden" style="margin:10px 0 0">L'export contient plusieurs campagnes : seule celle choisie sera gardée. Pense à supprimer les autres dans Stargazer.</p>
+    <button id="go">Alléger</button>
+  </div>
+
+  <div id="step3" class="card hidden">
+    <p id="result" class="stat ok" style="margin:0"></p>
+    <button id="dl">Télécharger le fichier allégé</button>
+    <button id="share" class="secondary hidden">Partager (ex. vers l'app Claude)</button>
+    <p style="margin:12px 0 0"><small>Joins ensuite ce fichier à la discussion de session dans ton projet Claude.</small></p>
+  </div>
+</main>
+
+<script>
+(() => {
+  const IMG = /data:image\/[a-zA-Z0-9.+-]+;base64,[A-Za-z0-9+/=]+/g;
+  const $ = id => document.getElementById(id);
+  let raw = "", data = null, srcName = "", out = null, outName = "";
+
+  const kb = n => Math.round(n / 1024).toLocaleString("fr-FR") + " Ko";
+
+  $("file").addEventListener("change", e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    srcName = f.name.replace(/\.json$/i, "");
+    const r = new FileReader();
+    r.onload = () => {
+      raw = r.result;
+      try { data = JSON.parse(raw); }
+      catch { $("fileinfo").innerHTML = '<span class="warn">Ce fichier n\'est pas un JSON valide.</span>'; return; }
+      const camps = Array.isArray(data) ? data : [data];
+      $("fileinfo").textContent = `${f.name} — ${kb(f.size)} — ${camps.length} campagne(s)`;
+      const sel = $("camp"); sel.innerHTML = "";
+      camps.forEach((c, i) => {
+        const o = document.createElement("option");
+        const n = (c.journal || []).length;
+        o.value = i; o.textContent = `${c.name || "(sans nom)"} — ${c.character && c.character.name || "?"} — ${n} entrée(s) de journal`;
+        sel.appendChild(o);
+      });
+      // présélectionner la campagne la plus remplie
+      let best = 0; camps.forEach((c, i) => { if ((c.journal || []).length > (camps[best].journal || []).length) best = i; });
+      sel.value = best;
+      $("campwarn").classList.toggle("hidden", camps.length < 2);
+      $("step2").classList.remove("hidden");
+      $("step3").classList.add("hidden");
+    };
+    r.readAsText(f, "utf-8");
+  });
+
+  $("go").addEventListener("click", () => {
+    const camps = Array.isArray(data) ? data : [data];
+    const keep = [camps[+$("camp").value]];
+    let count = 0;
+    const text = JSON.stringify(keep).replace(IMG, () => { count++; return ""; });
+    JSON.parse(text); // contrôle
+    out = new Blob([text], { type: "application/json" });
+    outName = srcName + "-light.json";
+    $("result").textContent = `${count} image(s) retirée(s) : ${kb(raw.length)} → ${kb(out.size)}`;
+    $("step3").classList.remove("hidden");
+    const file = new File([out], outName, { type: "application/json" });
+    $("share").classList.toggle("hidden", !(navigator.canShare && navigator.canShare({ files: [file] })));
+  });
+
+  $("dl").addEventListener("click", () => {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(out); a.download = outName;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+
+  $("share").addEventListener("click", async () => {
+    const file = new File([out], outName, { type: "application/json" });
+    try { await navigator.share({ files: [file], title: outName }); } catch (e) { /* annulé */ }
+  });
+})();
+</script>
+</body>
+</html>
