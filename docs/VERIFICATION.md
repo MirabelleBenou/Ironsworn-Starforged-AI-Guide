@@ -66,6 +66,8 @@ Pour s'assurer que le script de contrôle ne laisse rien passer, on lui a soumis
 
 Une relecture humaine ligne à ligne n'est donc pas nécessaire. Le seul risque qu'un script ne couvre pas est un écart entre la couche texte du PDF et ce qui est réellement imprimé. Une quinzaine de pages du livre (dont toutes les tables graphiques) ont été comparées visuellement à leur image, sans aucun écart. Pour un contrôle supplémentaire, [`ECHANTILLON-15.md`](ECHANTILLON-15.md) propose 15 lignes tirées au hasard, à vérifier en une dizaine de minutes (facultatif).
 
+- [x] Contrôle visuel des 15 lignes effectué le 22 octobre 2026 sur le livre imprimé : **15/15 conformes**.
+
 ## Différences connues entre éditions (pour information)
 
 Les jeux de données numériques les plus répandus (dont Datasworn 0.0.10) suivent le livre de 2022. Depuis, plusieurs tables ont été réordonnées ou modifiées : Settlement › First Look, Jovian World › Life, Derelict Zones › Settlement, Observed From Space de plusieurs planètes, Derelict › Community/Living › Area, Character Name › Given Name (entrée 99), Endure Harm (ligne 36–50). La bibliothèque suit les livres actuels.
